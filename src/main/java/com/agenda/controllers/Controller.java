@@ -10,23 +10,34 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.agenda.models.DAO;
 
-@WebServlet(urlPatterns = {"/Controller", "/main"})
+@WebServlet(urlPatterns = { "/Controller", "/main" })
 public class Controller extends HttpServlet {
-	
-	private static final long serialVersionUID = 1L;
-	
-	DAO dao = new DAO();
-       
-    public Controller() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		dao.testConnection();
+	private static final long serialVersionUID = 1L;
+
+	DAO dao = new DAO();
+
+	public Controller() {
+		super();
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String action = request.getServletPath();
+		System.out.println(action);
+		if (action.equals("/main"))
+			listContacts(request, response);
+
+	}
+
+	protected void listContacts(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.sendRedirect("agenda.jsp");
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
