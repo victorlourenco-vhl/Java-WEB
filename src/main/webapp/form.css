@@ -1,0 +1,30 @@
+form {
+    height: 35vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+label {
+    font-size: 13px;
+    font-weight: bold;
+}
+input {
+    border-radius: 5px;
+    border: 1px solid  #065d86;
+    padding: 3px 5px;
+  
+}
+#submit {
+    display: flex;
+    justify-content: center;
+}
+.botao {
+    font-size: 15px;
+    width: 100px;
+    margin: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
