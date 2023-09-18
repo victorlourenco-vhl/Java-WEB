@@ -11,21 +11,22 @@
   <body>
     <div class="container">
       <h1>Novo Contato</h1>
-      <form>
+      <form id="formContato">
         <label>Nome</label>
         <input type="text" name="nome" />
 
         <label>Telefone</label>
-        <input type="text" name="telefone" />
+        <input type="tel" name="telefone" />
 
         <label>E-mail</label>
-        <input type="text" name="e-mail" placeholder="exemplo@email.com" />
+        <input type="email" name="email" placeholder="exemplo@email.com" />
 
         <div id="submit">
-          <input type="submit" value="Cadastrar" class="botao" />
+          <input type="button" value="Cadastrar" class="botao" onclick="validar()"/>
         </div>
         
       </form>
     </div>
+    <script src="scripts/validacao-form.js"></script>
   </body>
 </html>
