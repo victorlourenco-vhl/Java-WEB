@@ -9,13 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.agenda.models.DAO;
+import com.agenda.models.JavaBeans;
 
-@WebServlet(urlPatterns = { "/Controller", "/main" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert" })
 public class Controller extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	DAO dao = new DAO();
+	JavaBeans contato = new JavaBeans();
 
 	public Controller() {
 		super();
@@ -24,16 +26,35 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		String action = request.getServletPath();
+		
 		System.out.println(action);
 		if (action.equals("/main"))
 			listContacts(request, response);
+		else if(action.equals("/insert"))
+			newContact(request, response);
+		else
+			response.sendRedirect("index.html");
 
 	}
 
 	protected void listContacts(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.sendRedirect("agenda.jsp");
+	}
+	
+	protected void newContact(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		System.out.println(request.getParameter("nome"));
+		System.out.println(request.getParameter("telefone"));
+		System.out.println(request.getParameter("email"));
+		
+		contato.setNome(request.getParameter("nome"));	
+		contato.setTelefone(request.getParameter("telefone"));
+		contato.setEmail(request.getParameter("nome"));
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

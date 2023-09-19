@@ -12,7 +12,7 @@
 <body>
 	<div class="container">
 		<h1>Lista de Contatos</h1>
-		<a href="" class="botao">Adicionar</a>
+		<a href="novo-contato.html" class="botao" >Adicionar</a>
 	</div>
 </body>
 </html>
