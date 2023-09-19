@@ -2,6 +2,7 @@ package com.agenda.models;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 public class DAO {
 
@@ -31,4 +32,24 @@ public class DAO {
 			e.printStackTrace();
 		}
 	}
+	
+	/* CREATE */
+	public void newContact(JavaBeans contact) {
+		String create = "INSERT INTO contatos(nome, telefone, email) VALUES('?', '?', '?')";
+		
+		try {
+			Connection conn = connect();
+			
+			// Preparar a query para execução no banco de dados
+			PreparedStatement pst = conn.prepareStatement(create);
+			
+			pst.setString(1, contact.getNome());
+			pst.setString(2, contact.getTelefone());
+			pst.setString(3, contact.getEmail());
+			
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	
 }

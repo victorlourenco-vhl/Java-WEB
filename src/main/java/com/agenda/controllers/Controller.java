@@ -47,13 +47,11 @@ public class Controller extends HttpServlet {
 	protected void newContact(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		System.out.println(request.getParameter("nome"));
-		System.out.println(request.getParameter("telefone"));
-		System.out.println(request.getParameter("email"));
-		
 		contato.setNome(request.getParameter("nome"));	
 		contato.setTelefone(request.getParameter("telefone"));
 		contato.setEmail(request.getParameter("nome"));
+		
+		dao.newContact(contato);
 		
 	}
 
