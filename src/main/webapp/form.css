@@ -1,16 +1,23 @@
 form {
-    height: 35vh;
+    /* height: 300px; */
+    width: 300px;
     
     display: flex;
     flex-direction: column;
     justify-content: space-between;
    
 }
+h1 {
+    font-size: 50px;
+}
 label {
-    font-size: 13px;
+    font-size: 18px;
     font-weight: bold;
 }
 input {
+    height: 25px;
+    margin: 10px 0;
+    font-size: 18px;
     border-radius: 5px;
     border: 1px solid  #065d86;
     padding: 3px 5px;
@@ -22,9 +29,11 @@ input {
 }
 .botao {
     font-size: 15px;
-    width: 100px;
+    height: 40px;
+    width: 150px;
     margin: 10px;
     border: 0;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
