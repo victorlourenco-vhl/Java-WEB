@@ -3,6 +3,7 @@ package com.agenda.controllers;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,9 +44,13 @@ public class Controller extends HttpServlet {
 			throws ServletException, IOException {
 
 		ArrayList<JavaBeans> list = dao.listContacts();
-		list.forEach(x -> System.out.println(x));
 
-		// response.sendRedirect("agenda.jsp");
+		request.setAttribute("contacts", list);
+		
+		// Classe para trabalhar requisições e resposta no JSP
+		RequestDispatcher rd = request.getRequestDispatcher("agenda.jsp");
+		rd.forward(request, response);
+		
 
 	}
 

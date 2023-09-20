@@ -25,6 +25,10 @@ h1 {
     color: #065d86;
 }
 
+#tabela {
+	margin-top: 30px;
+}
+
 .botao {
     text-decoration: none;
     background-color: #065d86;
