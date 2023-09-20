@@ -51,4 +51,9 @@ public class JavaBeans {
 		this.email = email;
 	}
 
+	@Override
+	public String toString() {
+		return "JavaBeans [id=" + id + ", nome=" + nome + ", telefone=" + telefone + ", email=" + email + "]";
+	}
+
 }
