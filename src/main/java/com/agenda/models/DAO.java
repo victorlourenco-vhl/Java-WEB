@@ -43,9 +43,15 @@ public class DAO {
 			// Preparar a query para execução no banco de dados
 			PreparedStatement pst = conn.prepareStatement(create);
 			
+			// Substitui os parâmetros na query
 			pst.setString(1, contact.getNome());
 			pst.setString(2, contact.getTelefone());
 			pst.setString(3, contact.getEmail());
+			
+			// Executa a query
+			pst.executeUpdate();
+			
+			conn.close();
 			
 		} catch (Exception e){
 			e.printStackTrace();
