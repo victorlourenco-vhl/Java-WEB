@@ -49,7 +49,7 @@ public class Controller extends HttpServlet {
 		
 		contato.setNome(request.getParameter("nome"));	
 		contato.setTelefone(request.getParameter("telefone"));
-		contato.setEmail(request.getParameter("nome"));
+		contato.setEmail(request.getParameter("email"));
 		
 		dao.newContact(contato);
 		
