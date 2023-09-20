@@ -53,6 +53,8 @@ public class Controller extends HttpServlet {
 		
 		dao.newContact(contato);
 		
+		response.sendRedirect("main");
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

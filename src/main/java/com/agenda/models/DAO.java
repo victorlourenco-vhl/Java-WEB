@@ -35,7 +35,7 @@ public class DAO {
 	
 	/* CREATE */
 	public void newContact(JavaBeans contact) {
-		String create = "INSERT INTO contatos(nome, telefone, email) VALUES('?', '?', '?')";
+		String create = "INSERT INTO contatos(nome, telefone, email) VALUES(?, ?, ?)";
 		
 		try {
 			Connection conn = connect();
