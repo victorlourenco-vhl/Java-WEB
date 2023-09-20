@@ -22,7 +22,7 @@
 <body>
 	<div class="container">
 		<h1>Lista de Contatos</h1>
-		<a href="novo-contato.html" class="botao" >Adicionar</a>
+		
 		<table id="tabela">
 			<thead>
 				<tr>
@@ -33,6 +33,7 @@
 				</tr>
 			</thead>
 			<tbody>
+			
 			<% for(int i = 0; i < list.size(); i++) { %>
 				<tr>
 					<td><%= list.get(i).getId() %></td>
@@ -41,8 +42,12 @@
 					<td><%= list.get(i).getEmail()%></td>
 				</tr>
 			<% } %>
+			
 			</tbody>
 		</table>
+		
+		<a href="novo-contato.html" class="botao" >Adicionar</a>
+		
 	</div>
 </body>
 </html>
